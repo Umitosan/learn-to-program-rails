@@ -15,6 +15,29 @@ class LessonsController < ApplicationController
     end
   end
 
+  def edit
+    @section = Section.find(params[:section_id])
+    @lesson = Lesson.find(params[:id])
+  end
+
+  def update
+    @section = Section.find(params[:section_id])
+    @lesson = Lesson.find(params[:id])
+    if @lesson.update(lesson_params)
+      flash[:notice] = "Lesson successfully updated!"
+      redirect_to section_path(@lesson.section)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @section = Section.find(params[:section_id])
+    @lesson = Lesson.find(params[:id])
+    @lesson.destroy
+    redirect_to section_path(@lesson.section)
+  end
+
   private
   def lesson_params
     params.require(:lesson).permit(:name, :content, :order)
