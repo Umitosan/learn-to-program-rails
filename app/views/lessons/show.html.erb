@@ -1,0 +1,14 @@
+
+<div id="crouton">
+  <ul class="lesson-nav">
+    <li> <%= link_to "Previous", section_lesson_path(@section.id, @lesson.prev ) %> </li>
+    <li> <%= link_to "Next", section_lesson_path(@section.id, @lesson.next ) %> </li>
+  </ul>
+</div>
+<br>
+<br>
+
+<h3> <%= @section.title %> </h3>
+<br>
+<h3> <%= @lesson.name %> </h3>
+<p> <%= @lesson.content %> </p>

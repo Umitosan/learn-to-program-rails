@@ -1,11 +1,13 @@
-<h1><%= @section.title %></h1>
+<h3><%= @section.title %></h3>
 
 <% if @section.lessons.any? %>
 
   <ul>
     <% @section.lessons.each do |lesson| %>
       <li>
-        <%= "#{lesson.name}" %>
+        <%= lesson.name %>
+        <%= lesson.content %>
+        <%= lesson.order %>
         <%= link_to "Edit", edit_section_lesson_path(@section, lesson) %> |
         <%= link_to "Delete", section_lesson_path(@section, lesson),
                                  :data => { :method => "delete"} %>

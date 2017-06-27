@@ -1,7 +1,11 @@
-<h1>Rails</h1>
+<h3>Rails</h3>
 
-<ul>
-  <% @sections.each do |section| %>
-  <li> <%= link_to section.title, section_path(section) %> </li>
-  <% end %>
-</ul>
+
+<% @sections.each do |section| %>
+  <ul>
+    <li><%= link_to section.title, section_path(section) %> </li>
+    <% section.lessons.each do |lesson|  %>
+      <p> <%= link_to lesson.name, section_lesson_path(section.id, lesson.id) %> </p>
+    <% end %>
+  </ul>
+<% end %>
