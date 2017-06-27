@@ -4,4 +4,5 @@ class Lesson < ActiveRecord::Base
   validates :name, :presence => true
   validates :content, :presence => true
   validates :order, :presence => true
+  validates :section_id, presence: true
 end
