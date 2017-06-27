@@ -5,5 +5,5 @@ describe Lesson do
   it { should validate_presence_of :content }
   it { should validate_presence_of :order }
 
-  # it { should belong_to :animal }
+  it { should belong_to :section }
 end
