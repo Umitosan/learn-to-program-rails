@@ -10,7 +10,8 @@
         <%= lesson.order %>
         <%= link_to "Edit", edit_section_lesson_path(@section, lesson) %> |
         <%= link_to "Delete", section_lesson_path(@section, lesson),
-                                 :data => { :method => "delete"} %>
+                                 :data => {:confirm => "You sure?",
+                                           :method => "delete"} %>
       </li>
     <% end %>
   </ul>

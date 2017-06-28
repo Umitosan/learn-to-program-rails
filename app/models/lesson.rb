@@ -6,7 +6,6 @@ class Lesson < ActiveRecord::Base
   validates :order, :presence => true
   validates :section_id, presence: true
 
-
   def next
     tmpOrder = self.order + 1
     tmpSection = self.section_id
