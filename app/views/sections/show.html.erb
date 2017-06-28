@@ -5,13 +5,12 @@
   <ul>
     <% @section.lessons.each do |lesson| %>
       <li>
-        <%= lesson.name %>
-        <%= lesson.content %>
-        <%= lesson.order %>
+        <%= lesson.name %> |
+        <%= lesson.content %> |
+        <%= lesson.order %> |
         <%= link_to "Edit", edit_section_lesson_path(@section, lesson) %> |
         <%= link_to "Delete", section_lesson_path(@section, lesson),
-                                 :data => {:confirm => "You sure?",
-                                           :method => "delete"} %>
+                                  :data => { :method => "delete" } %>
       </li>
     <% end %>
   </ul>
