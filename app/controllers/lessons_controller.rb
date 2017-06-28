@@ -36,6 +36,7 @@ class LessonsController < ApplicationController
     @section = Section.find(params[:section_id])
     @lesson = Lesson.find(params[:id])
     @lesson.destroy
+    flash[:notice] = "lesson destroyed!"
     redirect_to section_path(@lesson.section)
   end
 
